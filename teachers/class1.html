@@ -180,11 +180,28 @@
                    
                    <h4>How the lighting affects students: </h4>
                    <div id="lighting" style="height: 250px;"></div>
+
+                   <h4>Level of noise in the classroom: </h4>
+                   <div id="sound" style="height: 250px;"></div>
                    
                 <!-- /.row -->
 
             </div>
             <!-- /.container-fluid -->
+                            <!-- /.row -->
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="alert alert-info alert-dismissable">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                            <i class="fa fa-info-circle"> The temperature of the classroom  was adjusted to: 63 F</i><br/>
+                            <i class="fa fa-info-circle"> The lighting of the classroom  was adjusted to: 380 lux</i><br/> 
+                            <i class="fa fa-info-circle"> The best time to perform intense academic activities is between <b>11 AM</b> and <b>12:30 PM</b></i><br/> 
+
+                        </div>
+                    </div>
+                </div>
+                <!-- /.row -->
 
         </div>
         <!-- /#page-wrapper -->
@@ -257,6 +274,36 @@ new Morris.Bar({
      labels: ['grades']
 });
 </script>
+<script>
+      new Morris.Line({
+         // ID of the element in which to draw the chart.
+         element: 'sound',
+        // Chart data records -- each entry in this array corresponds to a point on
+        // the chart.
+         data: [
+            { decibels: '50', hour: 7},
+            { decibels: '55', hour: 8},
+            { decibels: '60', hour: 9 },
+            { decibels: '65', hour: 10 },
+            { decibels: '73', hour: 11 },
+            { decibels: '75', hour: 12 },
+            { decibels: '74', hour: 12.5 },
+            { decibels: '80', hour: 9.5 },
+            { decibels: '90', hour: 10.5 },
+            { decibels: '95', hour: 11.5 },
+    ],
+    // The name of the data record attribute that contains x-values.
+  xkey: ['hour'],
+  // A list of names of data record attributes that contain y-values.
+  ykeys: ['decibels'],
+  // Labels for the ykeys -- will be displayed when you hover over the
+  // chart.
+  labels: ['decibels']
+});
+</script>
+
+
+
 </body>
 
 </html>
